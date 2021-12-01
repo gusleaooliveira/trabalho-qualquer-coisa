@@ -1,0 +1,21 @@
+<h3>{{nomeComponente}}</h3>
+<label>Pesquisar:</label>
+<input type="text" [(ngModel)]="nomePesquisado"> 
+{{nomePesquisado}}
+<br />
+<table *ngIf="listas.length > 0">
+    <tr>
+        <th>ID</th>
+        <th>TITULO</th>
+        <th>DESCRICÃO</th>
+        <th>AÇÃO</th>
+    </tr>
+    <tr *ngFor="let list of listas | filtroPesquisa:nomePesquisado">
+        <td>{{list._id}}</td>
+        <td>{{list.titulo}}</td>
+        <td>{{list.descicao}}</td>
+        <td><a routerLink="/edit/{{list._id}}">Editar</a></td>
+        <td><a [routerLink]="" (click)="deletar(list._id)">Deletar</a></td>
+        
+    </tr> 
+</table>

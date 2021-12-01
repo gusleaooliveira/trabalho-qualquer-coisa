@@ -1,0 +1,14 @@
+<h3>Formulário de Lista de taferas</h3>
+
+<label for="titulo">Titulo:</label>
+<input [(ngModel)]="lista.titulo" id="titulo">
+<br />
+
+<label for="descricao">Descricão:</label>
+<input type="string" [(ngModel)]="lista.descricao" id="descricao">
+<br />
+
+<button (click)="salvar()" >{{botaoAcao}}</button>
+<button (click)="cancelar()" >Cancelar</button>
+
+<h4>{{mensagem}}</h4>
